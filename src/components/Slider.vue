@@ -28,9 +28,6 @@ export default {
   name: "slider",
   components: {
     VueSlickCarousel,
-    // Carousel,
-    // Slide,
-    // Navigation,
   },
   data() {
     return {
@@ -47,24 +44,55 @@ export default {
       },
     };
   },
+  mounted() {
+    let sliderArrows = document.querySelectorAll(".slick-arrow");
+    sliderArrows.forEach(arrow => arrow.innerHTML = "");
+  },
 };
 </script>
 <style>
-  slick-next
-.slick-arrow {
-    background: rgba(0,0,0,.1);
-    padding: 1rem 0;
-    font-size: calc(2rem, 3rem + 5vw, 2rem + 7vw);
-    border-radius: unset;
-    right: 1rem;
-    transition: background .3s ease;
+button.slick-arrow{
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: rgba(0,0,0,.2);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: unset;
+  z-index: 5;
+  cursor: pointer;
+  transition: .3s ease;
 }
-
-.slick-next:hover, .slick-prev:hover{
-    background: rgba(0,0,0,.3);
+button.slick-arrow:hover, button.slick-arrow:focus{
+  background-color: rgba(0,0,0,.4);
+  color: unset; 
+}
+.slick-next{
+  right: 0;
 }
 .slick-prev{
-    left: 1rem;
-    right: 0;
+  left: 0;
+}
+.slick-arrow::before {
+  content: "";
+   z-index: 2;
+   border-color: #fff;
+   position: relative;
+   color: #fff;
+  width: 1.2rem;
+  height: 1.2rem;
+  display: block;
+}
+.slick-next::before{
+  border-bottom: 2px solid;
+   border-left: 2px solid;
+   transform: rotate(-135deg);
+   right: -.3rem;
+}
+.slick-prev::before{
+  border-bottom: 2px solid;
+   border-left: 2px solid;
+   transform: rotate(45deg);
+   left: .85rem;
 }
 </style>
