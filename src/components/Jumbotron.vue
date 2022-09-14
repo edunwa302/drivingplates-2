@@ -2,7 +2,7 @@
   <section id="bg-container" class="jumbotron">
     <div class="fixed video-container">
       <iframe
-        src="https://player.vimeo.com/video/434167988?background=1&autoplay=1&loop=1&byline=0&title=0"
+        src=""
       ></iframe>
     </div>
     <navbar />
