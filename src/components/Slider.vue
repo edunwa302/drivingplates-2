@@ -42,7 +42,6 @@ export default {
 };
 </script>
 <style>
-<<<<<<< HEAD
 button.slick-arrow{
   width: 2.5rem;
   height: 2.5rem;
@@ -54,15 +53,6 @@ button.slick-arrow{
   z-index: 5;
   cursor: pointer;
   transition: .3s ease;
-=======
-.slick-arrow {
-    background: rgba(0,0,0,.1);
-    padding: 1rem 0;
-    font-size: calc(2rem, 3rem + 5vw, 2rem + 7vw);
-    border-radius: unset;
-    right: 1rem;
-    transition: background .3s ease;
->>>>>>> 2ac7622638981339a32bdd0e0ba5cd36ae9a8946
 }
 button.slick-arrow:hover, button.slick-arrow:focus{
   background-color: rgba(0,0,0,.4);
