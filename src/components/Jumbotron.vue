@@ -1,13 +1,12 @@
 <template>
-   <section id="bg-container" class="jumbotron">
+  <section id="bg-container" class="jumbotron">
     <div class="fixed video-container">
-      <!-- <video autoplay muted loop class="video">
-        <source src="/video/diving.mp4" type="video/mp4" />
-      </video> -->
+      <iframe
+        src=""
+      ></iframe>
     </div>
     <navbar />
-    <!-- <div class="h-[25vh] sm:h-[40vh] md:h-[65vh] xl:h-[55vh] 2xl:h-[50vh]"></div> -->
-    <div style="padding-bottom: 33.6%"></div>
+    <div class="jumbotron-spacer">&nbsp;</div>
     <div
       class="flex justify-end px-4 sm:px-12 md:px-16 lg:px-20 xl:px-[100px] 2xl:px-0 py-4 2xl:max-w-[1700px] 2xl:mx-auto"
     >
@@ -20,58 +19,56 @@
     </div>
   </section>
 </template>
+<!-- https://player.vimeo.com/video/434167988?background=1&autoplay=1&loop=1&byline=0&title=0 -->
 <script>
-import Navbar from "./Navbar.vue";
+import Navbar from './Navbar.vue';
+
 export default {
   components: {
-    Navbar
-  }
-}
+     Navbar
+  },
+};
 </script>
 <style scoped>
 .jumbotron {
-  font-family: "Heebo", Arial, Helvetica, sans-serif;
+  font-family: 'Heebo', Arial, Helvetica, sans-serif;
+  max-height: 44vw;
+  height: 44vw;
+}
+.jumbotron-spacer {
+  height: calc(100% - 160px);
 }
 .video-container {
   background-color: #7e3a3a;
-  min-width: 100%;
-  width: auto;
-  min-height: 80vh;
-  z-index: -1;  
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 44vw;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+  max-height: 44vw;
 }
-.video {
-  max-width: 800px;
-  background: url("/video/video-palceholder.png");
+
+.video-container iframe {
+  width: 112vw;
+  height: 50vw;
+  min-height: 50vw;
+  min-width: 100vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: url('/video/video-palceholder.png');
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
-
-@media screen and (min-width: 640px) {
-  .video {
-    max-width: 1200px;
-  }
-}
-@media screen and (min-width: 768px) {
-  .video {
-    max-width: 1400px;
-  }
-}
-@media screen and (min-width: 1100px) {
-  .video {
-    max-width: 2000px;
-  }
-}
-@media screen and (min-width: 1100px) {
-  .video {
-    max-width: 110vw;
-  }
-}
-@media screen and (min-width: 1900px) {
-  .video {
-    max-width: none;
-    width: 100vw;
+@media (max-width: 640px) {
+  .jumbotron-spacer {
+    height: calc(100% - 145px);
   }
 }
 </style>

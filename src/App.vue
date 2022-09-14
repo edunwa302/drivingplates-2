@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-[150vh]">
+  <div>
     <jumbotron />
     <page-body/>
     <footer-section />
@@ -20,5 +20,3 @@ export default {
 }
 
 </script>
-
-<style scoped></style>
