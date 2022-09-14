@@ -1,24 +1,12 @@
 <template>
   <section class="pb-28">
-    <!-- <Carousel :autoplay="2000" :wrap-around="true" :settings="settings">
-      <Slide v-for="n in 25" :key="n">
-        <div class="carousel_item h-full">
-          <img class="h-full" :src="`/images/slide${n}.jpg`" loading='lazy'/>
-        </div>
-      </Slide>
-      <template #addons>
-        <Navigation />
-      </template>
-    </Carousel> -->
+    <!-- slider -->
     <VueSlickCarousel v-bind="settings">
       <img v-for="n in 25" :key="n" :src="`/images/slide${n}.jpg`" :alt="`slide${n}`" /> 
-     
     </VueSlickCarousel>
   </section>
 </template> 
 <script>
-// import { Carousel, Slide, Navigation } from "vue3-carousel";
-// import "vue3-carousel/dist/carousel.css";
 import VueSlickCarousel from 'vue-slick-carousel'
 import 'vue-slick-carousel/dist/vue-slick-carousel.css'
   // optional style for arrows & dots
@@ -34,13 +22,16 @@ export default {
       settings: {
         accessibility: true,
         autoplay: true,
+        speed: 1000,
+        autoplaySpeed: 1000,
+        cssEase: "ease-in",
         centerMode: true,
         dots: false,
         slidesToScroll: 1,
-        speed: 300,
         infinite: true,
         slidesToShow: 5,
         arrows: true,
+        variableWidth: true
       },
     };
   },
@@ -51,6 +42,7 @@ export default {
 };
 </script>
 <style>
+<<<<<<< HEAD
 button.slick-arrow{
   width: 2.5rem;
   height: 2.5rem;
@@ -62,6 +54,15 @@ button.slick-arrow{
   z-index: 5;
   cursor: pointer;
   transition: .3s ease;
+=======
+.slick-arrow {
+    background: rgba(0,0,0,.1);
+    padding: 1rem 0;
+    font-size: calc(2rem, 3rem + 5vw, 2rem + 7vw);
+    border-radius: unset;
+    right: 1rem;
+    transition: background .3s ease;
+>>>>>>> 2ac7622638981339a32bdd0e0ba5cd36ae9a8946
 }
 button.slick-arrow:hover, button.slick-arrow:focus{
   background-color: rgba(0,0,0,.4);
@@ -94,5 +95,18 @@ button.slick-arrow:hover, button.slick-arrow:focus{
    border-left: 2px solid;
    transform: rotate(45deg);
    left: .85rem;
+}
+.slick-track
+{
+    display: flex !important;
+}
+
+.slick-slide
+{
+    height: inherit !important;
+}
+.slick-slide img {
+  height: 25vw;
+  max-height: 450px;
 }
 </style>
